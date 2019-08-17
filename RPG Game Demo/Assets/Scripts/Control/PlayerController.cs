@@ -1,28 +1,36 @@
 ﻿using UnityEngine;
+using RPG.Movement;
 
-public class PlayerController : MonoBehaviour
+namespace RPG.Control
 {
-    Mover mover;
-    RaycastHit hit;
-        
-    void Start()
+    public class PlayerController : MonoBehaviour
     {
-        mover = FindObjectOfType<Mover>();
-    }
+        Mover mover;
 
-    void Update()
-    {
-        if(Input.GetMouseButton(0)){
-            CreateRaycast();
-            mover.MoveTo(hit.point);
+        void Start()
+        {
+            mover = FindObjectOfType<Mover>();
         }
-    }
 
-    void CreateRaycast(){
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        bool hasHit = Physics.Raycast(ray, out hit);
-        if(hasHit){
-            hit.point = hit.point;
+        void Update()
+        {
+            if (Input.GetMouseButton(0))
+            {
+                MoveToCursor();
+            }
+        }
+
+        void MoveToCursor()
+        {
+            //Create raycast to locate hit point of the mouse
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            bool hasHit = Physics.Raycast(ray, out hit);
+            if (hasHit)
+            {
+                //Move the player to the destination
+                mover.MoveTo(hit.point);
+            }
         }
     }
 }
