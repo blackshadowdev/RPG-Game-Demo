@@ -15,6 +15,7 @@ public class Mover : MonoBehaviour
         if(Input.GetMouseButtonDown(0)){
             MoveToCursor();
         }
+        UpdateAnimator();
    }
 
     void MoveToCursor(){
@@ -24,5 +25,13 @@ public class Mover : MonoBehaviour
         if(hasHit){
             agent.destination = hit.point; 
         }
+    }
+
+    //Set blend tree speed to speed of the navmesh agent
+    void UpdateAnimator(){
+        Vector3 velocity = agent.velocity;
+        Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+        float speed = localVelocity.z;
+        GetComponent<Animator>().SetFloat("ForwardSpeed", speed);
     }
 }
