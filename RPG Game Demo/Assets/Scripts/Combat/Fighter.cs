@@ -8,14 +8,18 @@ namespace RPG.Combat
     {
         [SerializeField] float weaponRange = 2f;
         [SerializeField] float timeBetweenAttacks = 1f;
+        [SerializeField] float weaponDamage = 5f;
         Transform target;
         Mover mover;
         Animator animator;
+        Health health;
         float timeSinceLastAttack = 0;
+
 
         private void Awake() {
             mover = FindObjectOfType<Mover>();
             animator = GetComponent<Animator>();
+            health = target.GetComponent<Health>();
         }
 
         private void Update()
@@ -42,6 +46,11 @@ namespace RPG.Combat
             }
         }
 
+        //Animation event
+        void Hit(){
+            health.TakeDamage(weaponDamage);
+        }
+
         private bool IsInRange()
         {
             return Vector3.Distance(transform.position, target.position) < weaponRange;
@@ -56,9 +65,5 @@ namespace RPG.Combat
             target = null;
         }
 
-        //Animation event
-        void Hit(){
-
-        }
     }
 }
