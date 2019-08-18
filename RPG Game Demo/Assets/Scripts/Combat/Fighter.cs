@@ -12,14 +12,13 @@ namespace RPG.Combat
         Transform target;
         Mover mover;
         Animator animator;
-        Health health;
+        
         float timeSinceLastAttack = 0;
 
 
         private void Awake() {
             mover = FindObjectOfType<Mover>();
             animator = GetComponent<Animator>();
-            health = target.GetComponent<Health>();
         }
 
         private void Update()
@@ -48,6 +47,7 @@ namespace RPG.Combat
 
         //Animation event
         void Hit(){
+            Health health = target.GetComponent<Health>();
             health.TakeDamage(weaponDamage);
         }
 
