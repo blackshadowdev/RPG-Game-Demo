@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using RPG.Core;
+using RPG.Combat;
 
 namespace RPG.Movement
 {
@@ -16,6 +18,12 @@ namespace RPG.Movement
         {
 
             UpdateAnimator();
+        }
+
+        public void StartMoveAction(Vector3 destination){
+            GetComponent<ActionScheduler>().StartAction(this);
+            GetComponent<Fighter>().Cancel();
+            MoveTo(destination);
         }
 
         public void MoveTo(Vector3 destination)

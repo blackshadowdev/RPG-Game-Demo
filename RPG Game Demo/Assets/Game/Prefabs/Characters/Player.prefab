@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1529146016}
   - component: {fileID: 1529146020}
   - component: {fileID: 3605573006145322737}
+  - component: {fileID: 305985639}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -126,6 +127,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae13a2beff96dd14c90f7a3f38b5275e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponRange: 2
+  target: {fileID: 0}
+--- !u!114 &305985639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7823583580841317628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdba16f33fa6b1049be685ada822ad39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1332217990104688337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -181,6 +196,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 425558, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.63248575
+      objectReference: {fileID: 0}
+    - target: {fileID: 425558, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.37547126
+      objectReference: {fileID: 0}
     - target: {fileID: 444164, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.5785476
@@ -197,16 +220,7 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: -0.3754713
       objectReference: {fileID: 0}
-    - target: {fileID: 425558, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.63248575
-      objectReference: {fileID: 0}
-    - target: {fileID: 425558, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.37547126
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9572094, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
 --- !u!4 &1332217990104840617 stripped
 Transform:
