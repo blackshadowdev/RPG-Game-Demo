@@ -21,6 +21,11 @@ namespace RPG.Movement
         public void MoveTo(Vector3 destination)
         {
             agent.destination = destination;
+            agent.isStopped = false;
+        }
+
+        public void Stop(){
+            agent.isStopped = true;
         }
 
         //Set blend tree speed to speed of the navmesh agent

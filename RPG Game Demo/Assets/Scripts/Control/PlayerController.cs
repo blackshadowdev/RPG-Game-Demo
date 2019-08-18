@@ -31,7 +31,7 @@ namespace RPG.Control
                     if(target == null) continue;
 
                     if(Input.GetMouseButtonDown(0)){
-                        fighter.Attack();
+                        fighter.Attack(target);
                     } 
                     return true;
                 }
@@ -45,8 +45,10 @@ namespace RPG.Control
             bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
             if (hasHit)
             {
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButton(0)){
                     mover.MoveTo(hit.point);
+                    fighter.Cancel();
+                }
                 return true;
             }
             return false;
