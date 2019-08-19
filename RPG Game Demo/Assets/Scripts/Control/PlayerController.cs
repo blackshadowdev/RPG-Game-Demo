@@ -22,22 +22,38 @@ namespace RPG.Control
             if(InteractWithMovement()) return;
         }
 
-        bool InteractWithCombat()
+        private bool InteractWithCombat()
         {
-            if(Physics.RaycastNonAlloc(GetMouseRay(), m_Results) > 0){
-                for (int i = 0; i < m_Results.Length; i++)
-                {
-                    CombatTarget target = m_Results[i].transform.gameObject.GetComponent<CombatTarget>();
-                    if(target == null) continue;
+            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            foreach (RaycastHit hit in hits)
+            {
+                CombatTarget target = hit.transform.GetComponent<CombatTarget>();
+                if (!fighter.CanAttack(target)) continue;
 
-                    if(Input.GetMouseButtonDown(0)){
-                        fighter.Attack(target);
-                    } 
-                    return true;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    fighter.Attack(target);
                 }
-            } 
+                return true;
+            }
             return false;
         }
+        // bool InteractWithCombat()
+        // {
+        //     if(Physics.RaycastNonAlloc(GetMouseRay(), m_Results) > 0){
+        //         for (int i = 0; i < m_Results.Length; i++)
+        //         {
+        //             CombatTarget target = m_Results[i].transform.gameObject.GetComponent<CombatTarget>();
+        //             if(target == null) continue;
+
+        //             if(Input.GetMouseButtonDown(0)){
+        //                 fighter.Attack(target);
+        //             } 
+        //             return true;
+        //         }
+        //     } 
+        //     return false;
+        // }
 
         bool InteractWithMovement()
         {

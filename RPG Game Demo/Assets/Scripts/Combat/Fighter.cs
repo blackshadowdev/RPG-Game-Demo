@@ -14,7 +14,7 @@ namespace RPG.Combat
         Animator animator;
 
         float timeSinceLastAttack = 0;
-
+        bool canAttack = true;
 
         private void Awake() {
             mover = GetComponent<Mover>();
@@ -27,7 +27,7 @@ namespace RPG.Combat
             if (target == null) return;
 
             if (target.IsDead()) return;
-            
+           
             if (!IsInRange())
             {
                 mover.MoveTo(target.transform.position);
@@ -37,6 +37,12 @@ namespace RPG.Combat
                 mover.Cancel();
                 AttackBehaviour();
             }
+        }
+
+        public bool CanAttack(CombatTarget combatTarget){
+            if(combatTarget == null) return false;
+            target = combatTarget.GetComponent<Health>();
+            return target != null && !target.IsDead();
         }
 
         private void AttackBehaviour()
@@ -60,7 +66,7 @@ namespace RPG.Combat
 
         public void Attack(CombatTarget combatTarget){
             GetComponent<ActionScheduler>().StartAction(this);
-            target = combatTarget.GetComponent<Health>();
+            //target = combatTarget.GetComponent<Health>();
         }
 
         public void Cancel(){
