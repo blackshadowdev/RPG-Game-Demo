@@ -8,6 +8,10 @@ namespace RPG.Combat
 
         bool isDead;
 
+        public bool IsDead(){
+            return isDead;
+        }
+
         public void TakeDamage(float damage){
             if(isDead) return;
 

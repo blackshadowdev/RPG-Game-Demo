@@ -9,7 +9,7 @@ namespace RPG.Combat
         [SerializeField] float weaponRange = 2f;
         [SerializeField] float timeBetweenAttacks = 1f;
         [SerializeField] float weaponDamage = 5f;
-        Transform target;
+        Health target;
         Mover mover;
         Animator animator;
 
@@ -25,6 +25,8 @@ namespace RPG.Combat
         {
             timeSinceLastAttack += Time.deltaTime;
             if (target == null) return;
+
+            if (target.IsDead()) return;
             
             if (!IsInRange())
             {
@@ -47,8 +49,7 @@ namespace RPG.Combat
 
         //Animation event
         void Hit(){
-            Health health = target.GetComponent<Health>();
-            health.TakeDamage(weaponDamage);
+            target.TakeDamage(weaponDamage);
         }
 
         private bool IsInRange()
@@ -58,10 +59,11 @@ namespace RPG.Combat
 
         public void Attack(CombatTarget combatTarget){
             GetComponent<ActionScheduler>().StartAction(this);
-            target = combatTarget.transform;
+            target = combatTarget.GetComponent<Health>();
         }
 
         public void Cancel(){
+            animator.SetTrigger("stopAttack"); 
             target = null;
         }
 
