@@ -12,8 +12,8 @@ namespace RPG.Control
 
         void Start()
         {
-            mover = FindObjectOfType<Mover>();
-            fighter = FindObjectOfType<Fighter>();
+            mover = GetComponent<Mover>();
+            fighter = GetComponent<Fighter>();
         }
 
         void Update()

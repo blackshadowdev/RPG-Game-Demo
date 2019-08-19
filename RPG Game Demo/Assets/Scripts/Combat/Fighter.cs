@@ -12,12 +12,12 @@ namespace RPG.Combat
         Transform target;
         Mover mover;
         Animator animator;
-        
+
         float timeSinceLastAttack = 0;
 
 
         private void Awake() {
-            mover = FindObjectOfType<Mover>();
+            mover = GetComponent<Mover>();
             animator = GetComponent<Animator>();
         }
 
@@ -28,7 +28,7 @@ namespace RPG.Combat
             
             if (!IsInRange())
             {
-                mover.MoveTo(target.position);
+                mover.MoveTo(target.transform.position);
             }
             else
             {
@@ -53,7 +53,7 @@ namespace RPG.Combat
 
         private bool IsInRange()
         {
-            return Vector3.Distance(transform.position, target.position) < weaponRange;
+            return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
         }
 
         public void Attack(CombatTarget combatTarget){
