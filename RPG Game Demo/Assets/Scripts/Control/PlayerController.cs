@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using RPG.Movement;
 using RPG.Combat;
+using RPG.Core;
 
 namespace RPG.Control
 {
@@ -8,15 +9,18 @@ namespace RPG.Control
     {
         Mover mover;
         Fighter fighter;
+        Health health;
         //RaycastHit[] m_Results = new RaycastHit[1];
 
         void Start()
         {
             mover = GetComponent<Mover>();
+            health = GetComponent<Health>();
         }
 
         void Update()
         {
+            if (health.IsDead()) return;
             if(InteractWithCombat()) return;
             if(InteractWithMovement()) return;
         }

@@ -13,7 +13,7 @@ namespace RPG.Combat
         Mover mover;
         Animator animator;
 
-        float timeSinceLastAttack = 0;
+        float timeSinceLastAttack = Mathf.Infinity;
 
 
         private void Awake() {
@@ -71,7 +71,7 @@ namespace RPG.Combat
         }
 
         public void Cancel(){
-            animator.SetTrigger("stopAttack"); 
+            animator.SetTrigger("stopAttack");
             target = null;
         }
 
