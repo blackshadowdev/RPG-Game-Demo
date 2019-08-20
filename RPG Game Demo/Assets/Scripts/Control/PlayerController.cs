@@ -8,12 +8,11 @@ namespace RPG.Control
     {
         Mover mover;
         Fighter fighter;
-        RaycastHit[] m_Results = new RaycastHit[1];
+        //RaycastHit[] m_Results = new RaycastHit[1];
 
         void Start()
         {
             mover = GetComponent<Mover>();
-            fighter = GetComponent<Fighter>();
         }
 
         void Update()
@@ -28,11 +27,11 @@ namespace RPG.Control
             foreach (RaycastHit hit in hits)
             {
                 CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-                if (!fighter.CanAttack(target)) continue;
+                if (!GetComponent<Fighter>().CanAttack(target)) continue;
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    fighter.Attack(target);
+                    GetComponent<Fighter>().Attack(target);
                 }
                 return true;
             }
