@@ -104,6 +104,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3307795589981818629, guid: 750e3c6876a501e42b5827ec7a3d24d1,
+        type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 626339269909846987, guid: 750e3c6876a501e42b5827ec7a3d24d1,
         type: 3}
       propertyPath: m_Layer
@@ -379,7 +384,9 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3465456003021953970, guid: 750e3c6876a501e42b5827ec7a3d24d1, type: 3}
+    - {fileID: 7711346546495133159, guid: 750e3c6876a501e42b5827ec7a3d24d1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 750e3c6876a501e42b5827ec7a3d24d1, type: 3}
 --- !u!1 &4902660786131331472 stripped
 GameObject:
@@ -393,7 +400,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1080417002832114521}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &9222814616196908067
+--- !u!1001 &5187214475341800276
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
