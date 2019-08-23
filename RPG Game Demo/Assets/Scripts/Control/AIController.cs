@@ -2,7 +2,6 @@
 using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
-using System;
 
 namespace RPG.Control
 {
@@ -12,6 +11,7 @@ namespace RPG.Control
         [SerializeField] float suspicionTime = 3f;
         [SerializeField] float waypointDwellTime = 3f;
         [SerializeField] float waypointTolerance = 1;
+        [SerializeField][Range(0,1)] float patrolSpeedFraction = 0.2f;
         [SerializeField] PatrolPath patrolPath;
 
         GameObject player;
@@ -40,7 +40,6 @@ namespace RPG.Control
             {
                 AttackBehaviour();
 
-                timeSinceLastSawPlayer = 0;
             }
             else if (timeSinceLastSawPlayer < suspicionTime)
             {
@@ -62,13 +61,14 @@ namespace RPG.Control
 
         private void AttackBehaviour()
         {
+            timeSinceLastSawPlayer = 0;
             fighter.Attack(player);
         }
 
         private void PatrolBehaviour()
         {
             Vector3 nextPosition = guardPosition;
-            
+   
             if(patrolPath != null){
                 if(AtWaypoint()){
                     timeSinceArrivedAtWaypoint = 0;
@@ -79,7 +79,7 @@ namespace RPG.Control
             }
 
             if (timeSinceArrivedAtWaypoint > waypointDwellTime){
-                mover.StartMoveAction(nextPosition);
+                mover.StartMoveAction(nextPosition, patrolSpeedFraction);
             }
         }
 

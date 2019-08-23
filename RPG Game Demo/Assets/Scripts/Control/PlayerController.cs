@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using RPG.Movement;
 using RPG.Combat;
 using RPG.Core;
@@ -67,7 +67,7 @@ namespace RPG.Control
             if (hasHit)
             {
                 if (Input.GetMouseButton(0)){
-                    mover.StartMoveAction(hit.point);
+                    mover.StartMoveAction(hit.point, 1f);
                 }
                 return true;
             }
