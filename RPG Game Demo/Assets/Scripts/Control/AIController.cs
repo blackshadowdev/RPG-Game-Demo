@@ -2,6 +2,7 @@
 using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
+using System;
 
 namespace RPG.Control
 {
@@ -39,6 +40,7 @@ namespace RPG.Control
             {
                 AttackBehaviour();
 
+                timeSinceLastSawPlayer = 0;
             }
             else if (timeSinceLastSawPlayer < suspicionTime)
             {
@@ -60,7 +62,6 @@ namespace RPG.Control
 
         private void AttackBehaviour()
         {
-            timeSinceLastSawPlayer = 0;
             fighter.Attack(player);
         }
 
