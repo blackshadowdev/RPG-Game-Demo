@@ -7,7 +7,7 @@ namespace RPG.Cinematics
 {
     public class CinematicControlRemover : MonoBehaviour
     {
-        [SerializeField] PlayerController playerController;
+        PlayerController playerController;
 
         void Awake()
         {
