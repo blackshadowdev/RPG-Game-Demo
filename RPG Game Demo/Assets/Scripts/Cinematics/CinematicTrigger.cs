@@ -9,13 +9,9 @@ namespace RPG.Cinematics
     {
         bool isAlreadyTrigged;
         PlayableDirector director;
-        PlayerController playerController;
-        [SerializeField] ActionScheduler actionScheduler;
 
         private void Awake() {
-            director = GetComponent<PlayableDirector>();  
-            playerController = FindObjectOfType<PlayerController>();
-            actionScheduler = playerController.gameObject.GetComponent<ActionScheduler>();
+            director = GetComponent<PlayableDirector>(); 
         }
 
         private void OnTriggerEnter(Collider other) {
@@ -23,19 +19,7 @@ namespace RPG.Cinematics
             {
                 isAlreadyTrigged = true;
                 director.Play();
-                CheckCinematicStateAndRespond();
-            }
-        }
-
-        void OnTriggerStay(Collider other)
-        {
-            CheckCinematicStateAndRespond();
-        }
-
-        private void CheckCinematicStateAndRespond()
-        {
-            if(director.state == PlayState.Playing){
-                actionScheduler.CancelCurrentAction();
+         
             }
         }
     }
