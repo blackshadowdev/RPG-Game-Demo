@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5745430797732691750}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.02, y: 0.18, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6364451924972690961}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6621921624406622420
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +91,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.78, y: 6.4, z: 4.89}
+  m_Size: {x: 4.42, y: 6.4, z: 7.85}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3609714031464534658
 MonoBehaviour:
@@ -105,10 +105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ba7c05744fe6844b2df05763526486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 1
+  sceneToLoad: -1
   fadeInTime: 1
   fadeOutTime: 0.5
-  fadeWaitTime: 0.5
   spawnPoint: {fileID: 437160257356325523}
-  destination: 1
-  fader: {fileID: 816810317649494536, guid: ef92125aec54d0149860b6abec9606fd, type: 3}
+  destination: 0
+  fader: {fileID: 0}
