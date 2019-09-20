@@ -1,6 +1,7 @@
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
+using System;
 
 namespace RPG.Combat
 {
@@ -9,6 +10,8 @@ namespace RPG.Combat
         [SerializeField] float weaponRange = 2f;
         [SerializeField] float timeBetweenAttacks = 1f;
         [SerializeField] float weaponDamage = 5f;
+        [SerializeField] GameObject weaponPrefab = null; 
+        [SerializeField] Transform handTransfrom = null;
         Health target;
         Mover mover;
         Animator animator;
@@ -19,6 +22,15 @@ namespace RPG.Combat
         private void Awake() {
             mover = GetComponent<Mover>();
             animator = GetComponent<Animator>();
+        }
+
+        private void Start() {
+            SpawnWeapon();
+        }
+
+        private void SpawnWeapon()
+        {
+            Instantiate(weaponPrefab, handTransfrom);
         }
 
         private void Update()
