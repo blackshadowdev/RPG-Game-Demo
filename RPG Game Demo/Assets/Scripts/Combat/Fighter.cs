@@ -7,7 +7,8 @@ namespace RPG.Combat
     public class Fighter : MonoBehaviour, IAction
     {
         [SerializeField] float timeBetweenAttacks = 1f;
-        [SerializeField] Transform handTransform = null;
+        [SerializeField] Transform rightHandTransform = null;
+        [SerializeField] Transform leftHandTransform = null;
         [SerializeField] Weapon defaultWeapon = null;
        
         Health target;
@@ -30,7 +31,7 @@ namespace RPG.Combat
         public void EquipWeapon(Weapon weaponType)
         {
              currentWeapon = weaponType;
-             weaponType.Spawn(handTransform, animator);
+             weaponType.Spawn(rightHandTransform, leftHandTransform, animator);
         }
 
         private void Update()
@@ -55,6 +56,7 @@ namespace RPG.Combat
         {
             transform.LookAt(target.transform);
             if(timeSinceLastAttack > timeBetweenAttacks){
+                animator.ResetTrigger("stopAttack");
                 animator.SetTrigger("attack");
                 timeSinceLastAttack = 0;
             }
@@ -83,8 +85,10 @@ namespace RPG.Combat
         }
 
         public void Cancel(){
+            animator.ResetTrigger("attack");
             animator.SetTrigger("stopAttack");
             target = null;
+            mover.Cancel();
         }
 
     }
