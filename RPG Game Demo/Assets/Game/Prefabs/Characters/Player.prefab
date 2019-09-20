@@ -119,6 +119,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5141871605667590987, guid: 8c17cea94d77db94b9553c1eb65c97cf,
         type: 3}
+    - target: {fileID: 3125957438692005694, guid: 750e3c6876a501e42b5827ec7a3d24d1,
+        type: 3}
+      propertyPath: weaponOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: 5baa59bda7884174cb28cc99d45fb389,
+        type: 2}
     - target: {fileID: 626339269910106671, guid: 750e3c6876a501e42b5827ec7a3d24d1,
         type: 3}
       propertyPath: m_RootOrder
