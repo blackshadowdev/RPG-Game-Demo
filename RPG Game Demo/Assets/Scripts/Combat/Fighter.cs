@@ -11,6 +11,7 @@ namespace RPG.Combat
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] Weapon defaultWeapon = null;
        
+       
         Health target;
         Mover mover;
         Animator animator;
@@ -65,7 +66,14 @@ namespace RPG.Combat
         //Animation event
         void Hit(){
             if(target == null) return;
-            target.TakeDamage(currentWeapon.GetDamage());
+            if(!currentWeapon.HasProjectile()) return;
+
+            currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target);
+        }
+
+        //Animation event
+        void Shoot(){
+            Hit();
         }
 
         public bool CanAttack(GameObject combatTarget){
