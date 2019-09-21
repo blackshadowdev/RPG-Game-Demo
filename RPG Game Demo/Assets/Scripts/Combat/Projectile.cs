@@ -8,12 +8,18 @@ namespace RPG.Combat
     {
         [SerializeField] float speed = 1f;
         float damage = 0;
-        Health target = null;
+        [SerializeField] Health target = null;
         
+        void Start()
+        {
+            if (target == null) return;
+            transform.LookAt(GetAimLocation());
+        }
+
         private void Update() {
             if(target == null) return;
 
-            transform.LookAt(GetAimLocation());
+            
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
