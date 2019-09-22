@@ -8,7 +8,7 @@ namespace RPG.Combat
     {
         [SerializeField] float speed = 1f;
         float damage = 0;
-        [SerializeField] Health target = null;
+        Health target = null;
         
         void Start()
         {
