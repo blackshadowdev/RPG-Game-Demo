@@ -57,6 +57,10 @@ namespace RPG.Combat
             projectileInstance.SetTarget(target, weaponDamage);
         }
 
+        public float GetDamage(){
+            return weaponDamage;
+        }
+
         public float GetRange(){
             return weaponRange;
         }

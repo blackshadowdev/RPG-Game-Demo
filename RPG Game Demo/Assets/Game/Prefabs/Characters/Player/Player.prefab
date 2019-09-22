@@ -24,6 +24,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5401972681186859721, guid: 750e3c6876a501e42b5827ec7a3d24d1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8196697675836667564, guid: 750e3c6876a501e42b5827ec7a3d24d1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -84,15 +89,22 @@ PrefabInstance:
       propertyPath: health
       value: 200
       objectReference: {fileID: 0}
-    - target: {fileID: 3125957438692005694, guid: 750e3c6876a501e42b5827ec7a3d24d1,
+    - target: {fileID: 3153288548707644533, guid: 750e3c6876a501e42b5827ec7a3d24d1,
         type: 3}
-      propertyPath: defaultWeapon
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153288548707645727, guid: 750e3c6876a501e42b5827ec7a3d24d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153288548721223981, guid: 750e3c6876a501e42b5827ec7a3d24d1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: c60b0cf3ea6ffa64c84f01fdfd6fe3b6,
-        type: 2}
-    m_RemovedComponents:
-    - {fileID: 4869708733900857438, guid: 750e3c6876a501e42b5827ec7a3d24d1, type: 3}
-    - {fileID: 5807504682590629626, guid: 750e3c6876a501e42b5827ec7a3d24d1, type: 3}
+      objectReference: {fileID: 2100000, guid: 3f6fc0cf5e5d31c458bc74ede87cb8ae, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 750e3c6876a501e42b5827ec7a3d24d1, type: 3}
 --- !u!1 &4902660786131331472 stripped
 GameObject:

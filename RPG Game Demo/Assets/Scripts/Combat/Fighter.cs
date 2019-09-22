@@ -66,9 +66,12 @@ namespace RPG.Combat
         //Animation event
         void Hit(){
             if(target == null) return;
-            if(!currentWeapon.HasProjectile()) return;
+            if(currentWeapon.HasProjectile()){
+                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target);
+            }else{
+                target.TakeDamage(currentWeapon.GetDamage());
+            }
 
-            currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target);
         }
 
         //Animation event
