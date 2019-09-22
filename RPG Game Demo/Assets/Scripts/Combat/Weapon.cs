@@ -1,4 +1,5 @@
-﻿using RPG.Core;
+﻿using System;
+using RPG.Core;
 using UnityEngine;
 
 namespace RPG.Combat
@@ -13,13 +14,33 @@ namespace RPG.Combat
         [SerializeField] float weaponRange = 2f;
         [SerializeField] bool isRightHanded = true;
 
+        const string weaponName = "Weapon";
+
         public void Spawn(Transform rightHand, Transform leftHand, Animator animator)
         {
+            DestroyOldWeapon(rightHand, leftHand);
             if (equippedPrefab == null) return;
             if (animatorOverride == null) return;
             Transform hand = GetTransform(rightHand, leftHand);
-            Instantiate(equippedPrefab, hand);
+            GameObject weapon = Instantiate(equippedPrefab, hand);
+            weapon.name = weaponName;
+
             animator.runtimeAnimatorController = animatorOverride;
+        }
+
+        private void DestroyOldWeapon(Transform rightHand, Transform leftHand)
+        {
+            Transform previousWeapon = rightHand.Find(weaponName);
+            
+            if(previousWeapon == null) { 
+                previousWeapon = leftHand.Find(weaponName); 
+            }
+
+            if(previousWeapon == null) return;
+
+            previousWeapon.name = "DESTROYING";
+
+            Destroy(previousWeapon.gameObject);
         }
 
         private Transform GetTransform(Transform rightHand, Transform leftHand)
