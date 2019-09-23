@@ -31,14 +31,16 @@ namespace RPG.SceneManagement
                 Debug.LogError("Scene to load not set.");
                 yield break;
             }
-            Fader fader = FindObjectOfType<Fader>();
-            yield return fader.FadeOut(fadeOutTime);
-
-            
-            SavingWrapper wrapper = FindObjectOfType<SavingWrapper>();
-            wrapper.Save();
             
             DontDestroyOnLoad(gameObject);
+            
+            Fader fader = FindObjectOfType<Fader>();
+            SavingWrapper wrapper = FindObjectOfType<SavingWrapper>();
+            
+            yield return fader.FadeOut(fadeOutTime);
+            
+            wrapper.Save();
+            
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
 
             wrapper.Load();

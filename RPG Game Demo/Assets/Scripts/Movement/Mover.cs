@@ -7,11 +7,11 @@ namespace RPG.Movement
 {
     public class Mover : MonoBehaviour, IAction, ISaveable
     {
-        private NavMeshAgent agent;
+        NavMeshAgent agent;
         Health health;
         [SerializeField] float maxSpeed = 6.0f;
 
-        void Awake()
+        void Start()
         {
             health = GetComponent<Health>();
             agent = GetComponent<NavMeshAgent>();

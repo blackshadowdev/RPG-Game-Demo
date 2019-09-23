@@ -9,7 +9,7 @@ namespace RPG.Combat
         [SerializeField] float timeBetweenAttacks = 1f;
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
-        [SerializeField] Weapon defaultWeapon = null;
+        //[SerializeField] Weapon defaultWeapon = null;
         [SerializeField] string defaultWeaponName = "Unarmed";
        
         Health target;
@@ -30,11 +30,6 @@ namespace RPG.Combat
             EquipWeapon(weapon);
         }
 
-        public void EquipWeapon(Weapon weaponType)
-        {
-             currentWeapon = weaponType;
-             weaponType.Spawn(rightHandTransform, leftHandTransform, animator);
-        }
 
         private void Update()
         {
@@ -54,6 +49,12 @@ namespace RPG.Combat
             }
         }
 
+        public void EquipWeapon(Weapon weaponType)
+        {
+             currentWeapon = weaponType;
+             weaponType.Spawn(rightHandTransform, leftHandTransform, animator);
+        }
+        
         private void AttackBehaviour()
         {
             transform.LookAt(target.transform);

@@ -16,8 +16,6 @@ namespace RPG.Core
 
 
         public void TakeDamage(float damage){
-            if(isDead) return;
-
             health = Mathf.Max(health - damage, 0);
             
             if(health <= 0){
@@ -26,7 +24,9 @@ namespace RPG.Core
         }
 
         private void Die()
-        {            
+        {    
+            if(isDead) return;
+                    
             isDead = true;
             GetComponent<Animator>().SetTrigger("die");
             GetComponent<ActionScheduler>().CancelCurrentAction();

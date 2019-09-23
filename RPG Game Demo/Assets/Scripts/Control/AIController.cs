@@ -24,8 +24,8 @@ namespace RPG.Control
         float timeSinceLastSawPlayer = Mathf.Infinity;
         float timeSinceArrivedAtWaypoint = Mathf.Infinity;
 
-        private void Awake() {
-            player = GameObject.FindGameObjectWithTag("Player");
+        private void Start() {
+            player = GameObject.FindWithTag("Player");
             fighter = GetComponent<Fighter>();
             health = GetComponent<Health>();
             mover = GetComponent<Mover>();
