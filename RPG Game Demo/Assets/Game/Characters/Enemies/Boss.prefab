@@ -15,17 +15,17 @@ PrefabInstance:
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -45.03
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -8.982182
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 44.38
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
@@ -35,7 +35,7 @@ PrefabInstance:
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7850628
+      value: 0.98773426
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
@@ -45,7 +45,7 @@ PrefabInstance:
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6194162
+      value: 0.1561443
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
@@ -60,18 +60,27 @@ PrefabInstance:
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 103.453
+      value: 162.03401
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4669904610401765740, guid: 97794e8f32d9d574c8ed85db378e8c47,
+        type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5064529408760910167, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
-      propertyPath: defaultWeapon
+      propertyPath: defaultWeaponName
+      value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110398285355052232, guid: 97794e8f32d9d574c8ed85db378e8c47,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: b38d39251daf14144889a2c53a3f0365,
-        type: 2}
+      objectReference: {fileID: 2100000, guid: 01b2546c969fe814794af634cb4534f4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97794e8f32d9d574c8ed85db378e8c47, type: 3}
