@@ -7,6 +7,7 @@ namespace RPG.Combat
     public class Projectile : MonoBehaviour
     {
         [SerializeField] float speed = 1f;
+        [SerializeField] GameObject impactEffect = null;
         float damage = 0;
         Health target = null;
         
@@ -39,6 +40,10 @@ namespace RPG.Combat
             if(target.IsDead()) return;
             target.TakeDamage(damage);
             Destroy(gameObject);
+            
+            if(impactEffect!= null){
+                Instantiate(impactEffect, transform.position, Quaternion.identity);
+            }
         }
     }
 }
