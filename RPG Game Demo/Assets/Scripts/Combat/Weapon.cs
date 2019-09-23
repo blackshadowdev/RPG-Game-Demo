@@ -18,13 +18,28 @@ namespace RPG.Combat
         public void Spawn(Transform rightHand, Transform leftHand, Animator animator)
         {
             DestroyOldWeapon(rightHand, leftHand);
-            if (equippedPrefab == null) return;
-            if (animatorOverride == null) return;
-            Transform hand = GetTransform(rightHand, leftHand);
-            GameObject weapon = Instantiate(equippedPrefab, hand);
-            weapon.name = weaponName;
+            if (equippedPrefab != null){
+                Transform hand = GetTransform(rightHand, leftHand);
+                GameObject weapon = Instantiate(equippedPrefab, hand);
+                weapon.name = weaponName;
+            }
+            
+            //Cache the "Character" animation controller as anim. override controller 
+            //in case we need to override back to it.
+            var defaultAnimatorController = animator.runtimeAnimatorController as AnimatorOverrideController;
 
-            animator.runtimeAnimatorController = animatorOverride;
+            //Override the animation controllers
+            if (animatorOverride != null){
+                animator.runtimeAnimatorController = animatorOverride;
+            }
+            //In case one of the anim. override controllers is not set.
+            else if(defaultAnimatorController != null){ 
+                //Override it by the default animation controller
+                animator.runtimeAnimatorController = defaultAnimatorController.runtimeAnimatorController;
+        
+            }else{
+                Debug.LogWarning("Animator override controller of " + this.name + " scriptable object is not set correctly");
+            }
         }
 
         private void DestroyOldWeapon(Transform rightHand, Transform leftHand)
