@@ -31,9 +31,8 @@ namespace RPG.Core
             GetComponent<Animator>().SetTrigger("die");
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }
-        
-        public object CaptureState()
-        {
+
+        public object CaptureState(){
             return health;
         }
 

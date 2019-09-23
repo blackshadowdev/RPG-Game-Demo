@@ -1,10 +1,11 @@
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
+using RPG.Saving;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction
+    public class Fighter : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] float timeBetweenAttacks = 1f;
         [SerializeField] Transform rightHandTransform = null;
@@ -19,15 +20,15 @@ namespace RPG.Combat
 
         float timeSinceLastAttack = Mathf.Infinity;
 
-
         private void Awake() {
             mover = GetComponent<Mover>();
             animator = GetComponent<Animator>();
         }
 
         private void Start() {
-            Weapon weapon = Resources.Load<Weapon>(defaultWeaponName);
-            EquipWeapon(weapon);
+            if(currentWeapon == null){
+                EquipWeapon(defaultWeapon);
+            }
         }
 
         public void EquipWeapon(Weapon weaponType)
@@ -103,5 +104,15 @@ namespace RPG.Combat
             mover.Cancel();
         }
 
+        public object CaptureState()
+        {
+            return currentWeapon.name;
+        }
+
+        public void RestoreState(object state)
+        {
+            Weapon weapon = Resources.Load<Weapon>(state.ToString());
+            EquipWeapon(weapon);
+        }
     }
 }
