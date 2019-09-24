@@ -1,6 +1,7 @@
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
+using RPG.Resources;
 
 namespace RPG.Combat
 {
@@ -26,7 +27,7 @@ namespace RPG.Combat
         }
 
         private void Start() {
-            Weapon weapon = Resources.Load<Weapon>(defaultWeaponName);
+            Weapon weapon = UnityEngine.Resources.Load<Weapon>(defaultWeaponName);
             EquipWeapon(weapon);
         }
 
