@@ -2,6 +2,7 @@ using UnityEngine;
 using RPG.Saving;
 using RPG.Stats;
 using RPG.Core;
+using RPG.Combat;
 
 namespace RPG.Resources
 {
@@ -26,6 +27,10 @@ namespace RPG.Resources
             if(healthPoints <= 0){
                 Die();
             }
+        }
+
+        public float GetPercentage(){
+            return healthPoints / GetComponent<BaseStats>().GetHealth() * 100;
         }
 
         private void Die()
