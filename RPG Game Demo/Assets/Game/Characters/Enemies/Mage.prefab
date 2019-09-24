@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &556899234664095002
+--- !u!1001 &3442224135035849168
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,22 +10,22 @@ PrefabInstance:
     - target: {fileID: 2872973959401135264, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_Name
-      value: Boss
+      value: Mage
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.982182
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 44.38
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
@@ -35,7 +35,7 @@ PrefabInstance:
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.98773426
+      value: 0.6329151
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
@@ -45,7 +45,7 @@ PrefabInstance:
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.1561443
+      value: 0.77422124
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
@@ -60,27 +60,17 @@ PrefabInstance:
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 162.03401
+      value: 78.531006
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4669904610401765740, guid: 97794e8f32d9d574c8ed85db378e8c47,
+    - target: {fileID: 6401331354325578936, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
-      propertyPath: health
-      value: 100
+      propertyPath: characterClass
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5064529408760910167, guid: 97794e8f32d9d574c8ed85db378e8c47,
-        type: 3}
-      propertyPath: defaultWeaponName
-      value: Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 5110398285355052232, guid: 97794e8f32d9d574c8ed85db378e8c47,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 01b2546c969fe814794af634cb4534f4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97794e8f32d9d574c8ed85db378e8c47, type: 3}

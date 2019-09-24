@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8645933953052743286
+--- !u!1001 &556899234664095002
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,22 +10,22 @@ PrefabInstance:
     - target: {fileID: 2872973959401135264, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_Name
-      value: Archer
+      value: Grunt
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.555782
+      value: -45.03
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.94
+      value: -8.982182
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.251202
+      value: 44.38
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
@@ -35,7 +35,7 @@ PrefabInstance:
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.32238105
+      value: 0.98773426
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
@@ -45,7 +45,7 @@ PrefabInstance:
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.94661003
+      value: 0.1561443
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
@@ -60,37 +60,32 @@ PrefabInstance:
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 37.614002
+      value: 162.03401
       objectReference: {fileID: 0}
     - target: {fileID: 2083466833029968069, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2169200610521565646, guid: 97794e8f32d9d574c8ed85db378e8c47,
-        type: 3}
-      propertyPath: chaseDistance
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 5064529408760910167, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: defaultWeaponName
-      value: Bow Red
+      value: Sword
       objectReference: {fileID: 0}
     - target: {fileID: 4669904610401765740, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: health
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5110398285355052232, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bfbe2e8b331e2cc42be1591f949c0e41, type: 2}
+      objectReference: {fileID: 2100000, guid: 01b2546c969fe814794af634cb4534f4, type: 2}
     - target: {fileID: 6401331354325578936, guid: 97794e8f32d9d574c8ed85db378e8c47,
         type: 3}
       propertyPath: characterClass
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97794e8f32d9d574c8ed85db378e8c47, type: 3}
