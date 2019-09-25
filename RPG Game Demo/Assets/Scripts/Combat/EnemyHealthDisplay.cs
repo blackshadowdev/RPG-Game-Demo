@@ -19,8 +19,9 @@ namespace RPG.Combat
         private void Update() {
             if(fighter.GetTarget() == null){
                 healthValue.text = "N/A";
+                return;
             }
-            else
+            
             healthValue.text = String.Format("{0:0}%", fighter.GetTarget().GetPercentage());
         }
     }
