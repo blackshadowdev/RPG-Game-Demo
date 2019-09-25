@@ -1,3 +1,4 @@
+using System;
 using RPG.Saving;
 using UnityEngine;
 
@@ -11,6 +12,11 @@ namespace RPG.Resources
             experiencePoints += experience;
         }
         
+        public float GetPoints()
+        {
+            return experiencePoints;
+        }
+
         public object CaptureState()
         {
             return experiencePoints;
@@ -21,5 +27,6 @@ namespace RPG.Resources
         {
             experiencePoints = (float)state;
         }
+
     }
 }
