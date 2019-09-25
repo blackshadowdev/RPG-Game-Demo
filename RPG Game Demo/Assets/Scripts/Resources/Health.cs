@@ -2,8 +2,6 @@ using UnityEngine;
 using RPG.Saving;
 using RPG.Stats;
 using RPG.Core;
-using RPG.Combat;
-using System;
 
 namespace RPG.Resources
 {
@@ -14,7 +12,7 @@ namespace RPG.Resources
         bool isDead;
 
         private void Start() {
-            healthPoints = GetComponent<BaseStats>().GetHealth();
+            healthPoints = GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
         public bool IsDead(){
@@ -36,11 +34,11 @@ namespace RPG.Resources
             Experience experience = instigator.GetComponent<Experience>();
             if(experience == null) return;
 
-            experience.GainExperience(GetComponent<BaseStats>().GetExperienceReward());
+            experience.GainExperience(GetComponent<BaseStats>().GetStat(Stat.ExperienceReward));
         }
 
         public float GetPercentage(){
-            return healthPoints / GetComponent<BaseStats>().GetHealth() * 100;
+            return healthPoints / GetComponent<BaseStats>().GetStat(Stat.Health) * 100;
         }
 
         private void Die()
