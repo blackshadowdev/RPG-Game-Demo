@@ -55,6 +55,10 @@ namespace RPG.Combat
              currentWeapon = weaponType;
              weaponType.Spawn(rightHandTransform, leftHandTransform, animator);
         }
+
+        public Health GetTarget(){
+            return target;
+        }
         
         private void AttackBehaviour()
         {
